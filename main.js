@@ -1,0 +1,49 @@
+//Default Book Creation, instantiation of library array, and addition of default book 
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+let myLibrary = [];
+myLibrary.push(theHobbit);
+
+
+//Main Book constructor
+function Book(title, author, pages, read){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.infoString = this.title + " by " + this.author + ", " + this.pages + " pages, " 
+    this.info = function(){
+        if(read){
+            return this.infoString + "read.";
+       }
+       else
+            return this.infoString + "not read";
+    }
+}
+
+
+
+function addBookToLibrary(){
+
+}
+
+function updateLibraryDisplay(){
+    const bookDisplay = document.querySelector(".books-display-container");
+    bookDisplay.appendChild(createBookDispalyFormat(theHobbit));
+}   
+
+
+function createBookDispalyFormat(bookToAdd){
+
+    const bookDiv = document.createElement("div");
+    bookDiv.classList.add(".display-format-book");
+
+    const bookTitle = document.createElement("div");
+    bookTitle.innerText = bookToAdd.title.toStr;
+
+    bookDiv.appendChild(bookTitle);    
+
+    return bookDiv;
+}
+
+
+updateLibraryDisplay(theHobbit);
