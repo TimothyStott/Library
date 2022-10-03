@@ -23,27 +23,17 @@ function Book(title, author, pages, read){
 
 
 function addBookToLibrary(){
-
+    myLibrary.push(new Book("Test","Test",50,true))
+    myLibrary.forEach(book => console.log(book));
 }
 
 function updateLibraryDisplay(){
-    const bookDisplay = document.querySelector(".books-display-container");
-    bookDisplay.appendChild(createBookDispalyFormat(theHobbit));
+
 }   
 
 
-function createBookDispalyFormat(bookToAdd){
 
-    const bookDiv = document.createElement("div");
-    bookDiv.classList.add(".display-format-book");
-
-    const bookTitle = document.createElement("div");
-    bookTitle.innerText = bookToAdd.title.toStr;
-
-    bookDiv.appendChild(bookTitle);    
-
-    return bookDiv;
-}
+const addButton = document.querySelector("#addSubmitBtn");
+addButton.addEventListener('click', addBookToLibrary);
 
 
-updateLibraryDisplay(theHobbit);
