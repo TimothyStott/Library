@@ -3,7 +3,6 @@ const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
 let myLibrary = [];
 myLibrary.push(theHobbit);
 
-
 //Main Book constructor
 function Book(title, author, pages, read){
     this.title = title;
@@ -19,12 +18,19 @@ function Book(title, author, pages, read){
             return this.infoString + "not read";
     }
 }
+//Default constants for information needed
+const addButton = document.getElementById("#addSubmitBtn");
+const titleText = document.getElementById("#Title");
+const authorText = document.getElementById('#Author');
+const numPages = document.getElementById('Pages');
+const isRead = document.getElementById('Read-CheckBox');
+
+//Event Listner
 
 
 
 function addBookToLibrary(){
-    myLibrary.push(new Book("Test","Test",50,true))
-    myLibrary.forEach(book => console.log(book));
+    
 }
 
 function updateLibraryDisplay(){
@@ -33,7 +39,6 @@ function updateLibraryDisplay(){
 
 
 
-const addButton = document.querySelector("#addSubmitBtn");
 addButton.addEventListener('click', addBookToLibrary);
 
 

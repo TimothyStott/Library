@@ -1,0 +1,13 @@
+.modal-popup{
+    
+}
+
+.book-add-container{
+    display: grid;
+}
+
+.book-add-popup{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+}
