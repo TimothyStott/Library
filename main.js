@@ -19,13 +19,30 @@ function Book(title, author, pages, read){
     }
 }
 //Default constants for information needed
-const addButton = document.getElementById("#addSubmitBtn");
-const titleText = document.getElementById("#Title");
-const authorText = document.getElementById('#Author');
-const numPages = document.getElementById('Pages');
-const isRead = document.getElementById('Read-CheckBox');
+//Buttons
+const addButton = document.querySelector("#addSubmitBtn");
+const returnButton = document.querySelector('#return-button');
+//Inputs
+const titleText = document.querySelector("#Title");
+const authorText = document.querySelector('#Author');
+const numPages = document.querySelector('#Pages');
+const isRead = document.querySelector('#Read-CheckBox');
+//Divs
+const modalDiv = document.querySelector('.book-add-container-modal');
+
 
 //Event Listner
+returnButton.addEventListener('click', hideDiv);
+
+
+
+
+//Functions
+function hideDiv(){
+    modalDiv.classList.add("hide");
+    console.log(modalDiv);
+}
+
 
 
 

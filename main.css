@@ -1,13 +1,112 @@
-.modal-popup{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+:root {
+    /*Pallete*/
+    --c50: #faf5ff;
+    --c100: #f3e8ff;
+    --c200: #e9d5ff;
+    --c300: #d8b4fe;
+    --c400: #c084fc;
+    --c500: #a855f7;
+    --c600: #9333ea;
+    --c700: #7e22ce;
+    --c800: #6b21a8;
+    --c900: #581c87;
+}
+
+
+/*Modal Form formatting*/
+
+.book-add-container-modal{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-add-popup-content{
+    background-color: white;
+    height: clamp(250px, 50%, 1000px);
+    width: clamp(250px, 50%, 1000px);
+    width: 700px;
+    border-radius: 25px;
+    margin: 0 2rem 0 2rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.book-add-popup-content input[type="Text"], .book-add-popup-content input[type="Number"]{
+    height: 1rem;
+    padding-left: 3px;
+    border-radius: 5px;
+    border: solid 1px var(--c500);
     
 }
 
-.book-add-container{
+.photo-container{
     display: grid;
+    align-items: center;
+    justify-self: center;
 }
 
-.book-add-popup{
-    top: 50%;
-    left: 50%;
-    position:absolute;
+.photo-container img{
+    height: 75px;
+    min-height: 10px;
 }
+
+
+.button-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    row-gap: 1rem;
+    justify-items: center;
+}
+
+.popup-button{
+    width: auto;
+    font-size: 1.1rem;
+    margin: 0 5px 0 5px;
+    padding: 0 1rem .1rem 1rem;
+    background-color: var(--c400);
+    border: none;
+    height: clamp(2rem, 30px, 3rem);
+    color: var(--c50);
+    border-radius: 7px;
+}
+
+.popup-button:hover{
+    transition: 100ms ease-in-out;
+    background-color: white;
+    color: var(--c900);
+    transform: scale(1.1);
+}
+
+#return-button{
+    grid-column: 1 / -1;
+}
+
+.popup-flex{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    font-size: 1.1rem;
+}
+
+.hide{
+    display: none;
+}
+
+/*End Modal Form Formatting

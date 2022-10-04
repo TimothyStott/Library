@@ -12,22 +12,36 @@
 
 <body>
 
-    <div class="book-add-container modal-popup">
-        <div class="book-add-popup">            
-            <form>
-                <label for="Title">Title</label>
-                <input type="text" name="Title" id="Title">
-                <label for="Author">Author</label>
-                <input type="text" name="Author" id="Author">
-                <label for="Pages">Pages</label>
-                <input type="number" name="Pages" id="Pages" min="0">
-                <label for="Read">Read?</label>
-                <input type="checkbox" name="Read-CheckBox" id="Read-CheckBox">
-                <input id="addSubmitBtn" type="button" value="Submit">
-                <input type="reset" value="Clear">
+
+        <div class="book-add-container-modal">
+            <form class="book-add-popup-content">
+                <div class="photo-container">
+                    <img src="./img/icons8-book-64.png" alt="book icon">
+                </div>
+                    <div class="title-container popup-flex">
+                        <label for="Title">Title</label>
+                        <input type="text" name="Title" id="Title">
+                    </div>
+                    <div class="authoer-container popup-flex">
+                        <label for="Author">Author</label>
+                        <input type="text" name="Author" id="Author">
+                    </div>
+                    <div class="pages-container popup-flex">
+                        <label for="Pages">Pages</label>
+                        <input type="number" name="Pages" id="Pages" min="0">
+                    </div>
+                    <div class="read-container popup-flex">
+                        <label for="Read">Check if you have read it.</label>
+                        <input type="checkbox" name="Read-CheckBox" id="Read-CheckBox">
+                    </div>
+                    <div class="button-container">
+                        <input class="popup-button" id="addSubmitBtn" type="button" value="Add">
+                        <input class="popup-button" type="reset" value="Clear">
+                        <input class="popup-button" type="button" value="Return" id="return-button">
+                    </div>
             </form>
         </div>
-    </div>
+
 
 
 
