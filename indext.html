@@ -13,34 +13,36 @@
 <body>
 
 
-        <div class="book-add-container-modal">
+        <div class="book-add-container-modal hide">
             <form class="book-add-popup-content">
                 <div class="photo-container">
                     <img src="./img/icons8-book-64.png" alt="book icon">
                 </div>
                     <div class="title-container popup-flex">
                         <label for="Title">Title</label>
-                        <input type="text" name="Title" id="Title">
+                        <input type="text" name="Title" id="Title" required>
                     </div>
                     <div class="authoer-container popup-flex">
                         <label for="Author">Author</label>
-                        <input type="text" name="Author" id="Author">
+                        <input type="text" name="Author" id="Author" required>
                     </div>
                     <div class="pages-container popup-flex">
                         <label for="Pages">Pages</label>
-                        <input type="number" name="Pages" id="Pages" min="0">
+                        <input type="number" name="Pages" id="Pages" min="0" required>
                     </div>
                     <div class="read-container popup-flex">
                         <label for="Read">Check if you have read it.</label>
                         <input type="checkbox" name="Read-CheckBox" id="Read-CheckBox">
                     </div>
                     <div class="button-container">
-                        <input class="popup-button" id="addSubmitBtn" type="button" value="Add">
+                        <input class="popup-button" id="addSubmitBtn" type="submit" value="Add">
                         <input class="popup-button" type="reset" value="Clear">
                         <input class="popup-button" type="button" value="Return" id="return-button">
                     </div>
             </form>
         </div>
+
+
 
 
 

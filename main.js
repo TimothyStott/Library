@@ -30,10 +30,9 @@ const isRead = document.querySelector('#Read-CheckBox');
 //Divs
 const modalDiv = document.querySelector('.book-add-container-modal');
 
-
 //Event Listner
 returnButton.addEventListener('click', hideDiv);
-
+addButton.addEventListener('click',addBookToLibrary)
 
 
 
@@ -43,11 +42,13 @@ function hideDiv(){
     console.log(modalDiv);
 }
 
-
-
-
 function addBookToLibrary(){
-    
+    myLibrary.push(new Book(titleText.value,authorText.value,parseInt(numPages.value) ,isRead.checked))
+    myLibrary.forEach(book => console.log(book));   
+    titleText.value="";
+    authorText.value="";
+    numPages.value="";
+    isRead.checked=false;
 }
 
 function updateLibraryDisplay(){
