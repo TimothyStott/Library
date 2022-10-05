@@ -2,6 +2,10 @@
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
 let myLibrary = [];
 myLibrary.push(theHobbit);
+myLibrary.push(theHobbit);
+myLibrary.push(theHobbit);
+myLibrary.push(theHobbit);
+myLibrary.push(theHobbit);
 
 //Main Book constructor
 function Book(title, author, pages, read){
@@ -22,6 +26,7 @@ function Book(title, author, pages, read){
 //Buttons
 const addButton = document.querySelector("#addSubmitBtn");
 const returnButton = document.querySelector('#return-button');
+const plusButton = document.querySelector('.plus-book');
 //Inputs
 const titleText = document.querySelector("#Title");
 const authorText = document.querySelector('#Author');
@@ -31,14 +36,15 @@ const isRead = document.querySelector('#Read-CheckBox');
 const modalDiv = document.querySelector('.book-add-container-modal');
 
 //Event Listner
-returnButton.addEventListener('click', hideDiv);
+returnButton.addEventListener('click', toggleHideDiv);
+plusButton.addEventListener('click', toggleHideDiv)
 addButton.addEventListener('click',addBookToLibrary)
 
 
 
 //Functions
-function hideDiv(){
-    modalDiv.classList.add("hide");
+function toggleHideDiv(){
+    modalDiv.classList.toggle("hide");
     console.log(modalDiv);
 }
 

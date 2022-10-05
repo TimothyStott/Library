@@ -1,4 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Navigation
+Pallete
+1. Modal Formatting
+2. Grid Formatting
+3. Side Bar Formatting
+4. Header Formatting
+5. Content Formatting
+6. Hover Formatting
+End Navigation*/
+
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -7,20 +22,20 @@
 
 :root {
     /*Pallete*/
-    --c50: #faf5ff;
-    --c100: #f3e8ff;
-    --c200: #e9d5ff;
-    --c300: #d8b4fe;
-    --c400: #c084fc;
-    --c500: #a855f7;
-    --c600: #9333ea;
-    --c700: #7e22ce;
-    --c800: #6b21a8;
-    --c900: #581c87;
+    --c50: #f8fafc;
+    --c100: #f1f5f9;
+    --c200: #e2e8f0;
+    --c300: #cbd5e1;
+    --c400: #94a3b8;
+    --c500: #64748b;
+    --c600: #475569;
+    --c700: #334155;
+    --c800: #1e293b;
+    --c900: #0f172a;
 }
 
 
-/*Modal Form formatting*/
+/*1.Modal Form formatting*/
 
 .book-add-container-modal{
     position: absolute;
@@ -109,4 +124,121 @@
     display: none;
 }
 
-/*End Modal Form Formatting
+/*End Modal Form Formatting*/
+
+
+/*2. Grid Formatting*/
+main{
+    min-height: 100vh;
+    display: grid;    
+    grid-template-columns: clamp(250px, 30%, 350px) auto;
+    grid-template-rows: 1.5fr 5fr;
+}
+
+.sidebar{
+    grid-column: 1;
+    grid-row: 2 / -1;
+}
+
+.header{
+    grid-row: 1;
+    grid-column: 1 / -1;
+}
+
+.table-container{
+    grid-row: 2;
+    grid-column: 2;
+}
+/*End Grid Formatting*/
+
+
+/*3. Side Bar Formatting*/
+.sidebar{
+    background-color: var(--c900);
+    display: grid;
+}
+
+.book-mark-container{
+    justify-self: start;
+}
+
+.book-mark-container img{
+    margin: 0;
+}
+
+
+
+/*End Side Bar Formatting*/
+
+
+/*4. Header Formatting*/
+.header{
+    background-image: url(./img/alfons-morales-YLSwjSy7stw-unsplash.jpg);
+    background-size: cover;
+    display: grid;
+}
+
+.header-container{
+    place-self: center;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(0, 0, 0, .7);
+    text-align: center;
+    display: grid;
+    align-content: center;
+    color: var(--c50);
+}
+/*End Header Formatting*/
+
+
+/*5. Content Formatting*/
+.content-container{
+    display: grid;
+    grid-template-rows: .5fr 5fr;
+}
+
+.container-nav{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.container-nav-header-text{
+    padding: 1rem;
+}
+
+.container-nav-header-text h1{
+    color: var(--c800)
+}
+
+.plus-book-container{
+    justify-self: end;
+    margin-right: 2rem;
+    padding: 1rem;    
+}
+
+.plus-book{
+    background-color: var(--c700);
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 15px;
+    color: var(--c50);
+    font-size: 1.25rem;
+}
+
+.plus-book:hover{
+    background-color: white;
+    color: var(--c800);
+    transform: scale(1.15);
+    font-weight: bold;
+    transition: 100ms ease-in-out;
+}
+
+.book-table{
+
+}
+/*End Content Formatting*/
+
+/*6. Hover formatting*/
+/* End Hover formatting*/
