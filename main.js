@@ -162,6 +162,7 @@ function updateReadButtonsAfterDisplay(){
 function toggleReadStatus(){
     this.classList.toggle('isReadButton');
     this.classList.toggle('notReadButton');
+    updateArray();
 }
 
 function deleteRows(){
