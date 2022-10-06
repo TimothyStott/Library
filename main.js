@@ -52,16 +52,19 @@ function toggleHideDiv() {
 }
 
 function addBookToLibrary() {
-    if (titleText.value != null && authorText.value != null && numPages.value != NaN) {
+
+    if (titleText.value != "" && authorText.value != "" && numPages.value != "") 
+    {
         myLibrary.push(new Book(titleText.value, authorText.value, parseInt(numPages.value), isRead.checked))
         myLibrary.forEach(book => console.log(book));
         titleText.value = "";
         authorText.value = "";
         numPages.value = "";
         isRead.checked = false;
+        updateLibraryDisplay();
+
     }
 
-    updateLibraryDisplay();
 
 }
 
