@@ -130,9 +130,10 @@ End Navigation*/
 /*2. Grid Formatting*/
 main{
     min-height: 100vh;
+    height: 100vh;
     display: grid;    
-    grid-template-columns: clamp(250px, 30%, 350px) auto;
-    grid-template-rows: 1.5fr 5fr;
+    grid-template-columns: clamp(190px, 30%, 350px) auto;
+    grid-template-rows: 20% 10% auto 5rem;
 }
 
 .sidebar{
@@ -141,13 +142,19 @@ main{
 }
 
 .header{
-    grid-row: 1;
+    grid-row: 1 / 1;
     grid-column: 1 / -1;
 }
 
-.table-container{
+.content-container{
     grid-row: 2;
     grid-column: 2;
+}
+
+.table-container{
+    grid-row: 3;
+    grid-column: 2;
+
 }
 /*End Grid Formatting*/
 
@@ -194,13 +201,16 @@ main{
 /*5. Content Formatting*/
 .content-container{
     display: grid;
-    grid-template-rows: .5fr 5fr;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
 }
 
 .container-nav{
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto auto 1fr;
     align-items: center;
+    margin-top: 15px;
+    border-bottom: solid 1px lightgray;
 }
 
 .container-nav-header-text{
@@ -217,7 +227,7 @@ main{
     padding: 1rem;    
 }
 
-.plus-book{
+.plus-book, .login-button, #delete-button{
     background-color: var(--c700);
     height: 50px;
     width: 150px;
@@ -227,7 +237,12 @@ main{
     font-size: 1.25rem;
 }
 
-.plus-book:hover{
+.login-button, #delte-button{
+    width: auto;
+    padding: 0 .5rem 0 .5rem;
+}
+
+.plus-book:hover, .login-button:hover, #delete-button:hover{
     background-color: white;
     color: var(--c800);
     transform: scale(1.15);
@@ -235,9 +250,69 @@ main{
     transition: 100ms ease-in-out;
 }
 
+.table-container{
+    display: grid;
+    overflow-y: scroll;
+}
+
 .book-table{
+    padding-top: 1rem;
+    align-self: start;
+    text-align: center;
 
 }
+
+.book-table th{
+    font-size: 1.25rem;
+}
+
+.book-table tr{
+    font-size: 1.1rem;
+    height: 2.5rem;
+}
+
+#trash-icon{
+    height: 1.5rem;
+}
+
+.readButton {
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: var(--c50);
+
+}
+
+.readButton:hover{
+    transform: scale(1.1);
+}
+
+.notReadButton{
+    background-color: rgb(255, 37, 37);
+}
+
+
+.isReadButton{
+    background-color: green;
+}
+
+
+
+.delete-button-container{
+    display: flex;
+    justify-content: end;
+    border-top: solid 1px lightgray
+}
+
+#delete-button{
+    margin: 1rem 5rem 2rem 
+
+}
+
+
+
 /*End Content Formatting*/
 
 /*6. Hover formatting*/
