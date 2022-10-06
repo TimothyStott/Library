@@ -6,6 +6,7 @@ myLibrary.push(theHobbit);
 myLibrary.push(lotr1);
 
 
+
 //Main Book constructor
 function Book(title, author, pages, read) {
     this.title = title;
@@ -48,7 +49,6 @@ deleteButton.addEventListener('click',deleteRows);
 //Functions
 function toggleHideDiv() {
     modalDiv.classList.toggle("hide");
-    console.log(modalDiv);
 }
 
 function addBookToLibrary() {
@@ -56,7 +56,6 @@ function addBookToLibrary() {
     if (titleText.value != "" && authorText.value != "" && numPages.value != "") 
     {
         myLibrary.push(new Book(titleText.value, authorText.value, parseInt(numPages.value), isRead.checked))
-        myLibrary.forEach(book => console.log(book));
         titleText.value = "";
         authorText.value = "";
         numPages.value = "";
@@ -149,8 +148,9 @@ function updateLibraryDisplay(){
         }
 
         readCell.appendChild(boolToAdd);
-
     }
+
+    updateArray()
 }
 
 function updateReadButtonsAfterDisplay(){
@@ -172,9 +172,8 @@ function deleteRows(){
         // var i=1 to start after header
         for(var i=1; i<rowCount; i++) {
             var row = table.rows[i];
-            // index of td contain checkbox is 8
-            var chkbox = row.cells[0].getElementsByTagName('input')[0];
-            if('checkbox' == chkbox.type && true == chkbox.checked) {
+            var checkbox = row.cells[0].lastChild.checked;
+            if(checkbox) {
                 table.deleteRow(i);
              }
         }
@@ -186,7 +185,18 @@ function deleteRows(){
 function updateArray(){
     myLibrary = [];
     
-    /*logic needed*/
+    var table = bookTable.tBodies[0];
+    var rowCount = table.rows.length;
+
+    // var i=1 to start after header
+    for(var i=1; i<rowCount; i++) {
+        var row = table.rows[i];
+        var _title = row.cells[1].innerText;
+        var _author = row.cells[2].innerText;
+        var _pages = parseInt(row.cells[3].innerText);
+        var _read = row.cells[4].classList.contains('.isReadButton');
+        myLibrary.push(new Book(_title,_author,_pages,_read));
+    }
 
     console.log(myLibrary);
 }
